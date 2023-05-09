@@ -20,6 +20,7 @@ ${SearchButton}    suggestion-search-button
 
 
 
+
 *** Test Cases ***
 Scenario1
     input text    id=suggestion-search    ${Movie}
@@ -38,15 +39,14 @@ Scenario2
 Scenario3
     ${element}    Get WebElement    class=ipc-btn__text
     Click Element    ${element}
-    ${element}=    Get WebElement    id=iconContext-find-in-page
-    sleep    5
-    Click Element    ${element}
+    Click link    https://www.imdb.com/search/?ref_=nv_sr_menu_adv
     click link    /search/title
     click element    id=title_type-1
     click element    id=genres-1
     input text    name=release_date-min    2010
     input text    name=release_date-max    2020
     click button    class=primary
+    sleep    1
     click link    /search/title/?title_type=feature&release_date=2010-01-01,2020-12-31&genres=action&sort=user_rating,desc
     @{elements}=    Get WebElements    class=lister-item-year
     FOR    ${element}    IN    @{elements}
