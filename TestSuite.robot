@@ -10,17 +10,6 @@ ${SearchButton}    suggestion-search-button
 @{Elements}
 @{Elems}
 
-
-
-
-
-
-
-
-
-
-
-
 *** Test Cases ***
 Scenario1
     input text    id=suggestion-search    ${Movie}
